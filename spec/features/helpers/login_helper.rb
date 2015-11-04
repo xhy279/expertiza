@@ -1,4 +1,5 @@
 module LogInHelper
+=begin
   def log_in(name, password)
     visit '/'
     expect(page).to have_content 'Login'
@@ -6,10 +7,18 @@ module LogInHelper
     fill_in 'User Name', with: name
     fill_in 'Password', with: password
     click_button 'Login'
-
     expect(page).to have_content "User: #{name}"
   end
+=end
 
+  def log_in(name, password)
+
+    visit '/'
+    fill_in 'User Name', with: name
+    fill_in 'Password', with: password
+    click_button 'SIGN IN'
+
+  end
   def student
     User.where(name: 'student').first || User.new({
       "name"=>"student",

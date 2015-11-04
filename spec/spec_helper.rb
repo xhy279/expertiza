@@ -1,5 +1,8 @@
 # Record code coverage with coveralls on Travis
+require 'rails_helper'
 require 'coveralls'
+require 'capybara/rspec'
+require 'capybara/rails'
 Coveralls.wear! 'rails'
 
 # Record code coverage with simplecov locally
@@ -19,7 +22,7 @@ SimpleCov.start 'rails'
 # light-weight as possible. Requiring heavyweight dependencies from this file
 # will add to the boot time of your test suite on EVERY test run, even for an
 # individual file that may not need all of that loaded. Instead, make a
-# separate helper file that requires this one and then use it only in the specs
+# separate helpers file that requires this one and then use it only in the specs
 # that actually need it.
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
